@@ -1,6 +1,6 @@
 #include <iostream>
 
-long Factorial(int no);
+long Factorial(int n);
 long nCr(int n, int r);
 
 int main() {
@@ -13,17 +13,27 @@ int main() {
  std::cout << nCr(n,r);
  std::cout << std::endl;
 }
-long Factorial(int no){
-  int fac = 1;
+long Factorial(int n){
+  int facn = 1, i; 
 
-  for (int r=n; r >= 1; r--) {
-    fac = fac * r;
+  for (int i = n; i >= 1; i--) {
+    facn = facn * i;
   }
   
-  return fac;
+  return facn;
 }
 long nCr(int n, int r){
+  int facr = 1, j, facnr = 1, k; 
 
-  nCr = fac/
+  for (int j = r; j >= 1; j--) {
+    facr = facr * j;
+  }
+
+  for (int k = (n - r); k >= 1; k--) {
+    facnr = facnr * k;
+  }
+
+  nCr = facn / facr * facnr;
   
+  return ncr;
 }
