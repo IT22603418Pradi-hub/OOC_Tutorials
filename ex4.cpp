@@ -1,37 +1,34 @@
 #include <iostream>
 
-long Factorial(int n);
+long Factorial(int no);
 long nCr(int n, int r);
 
 int main() {
- int n, r;
- std::cout << "Enter a value for n ";
- std::cin >> n;
- std::cout << "Enter a value for r ";
- std::cin >> r;
- std::cout << "nCr = ";
- std::cout << nCr(n,r);
- std::cout << std::endl;
+	int n, r;
+	std::cout << "Enter a value for n ";
+	std::cin >> n;
+	std::cout << "Enter a value for r ";
+	std::cin >> r;
+	std::cout << "nCr = ";
+	std::cout << nCr(n,r);
+	std::cout << std::endl;
 }
-long Factorial(int n){
-  int facn = 1, i; 
+long Factorial(int no){
+  	int facn = 1, i; 
 
-  for (int i = n; i >= 1; i--) {
-    facn = facn * i;
-  }
+  	for (int i = no; i >= 1; i--) {
+    	facn = facn * i;
+  	}
   
-  return facn;
+  	return facn;
 }
 long nCr(int n, int r){
-  int facr = 1, j, facnr = 1, k; 
+  	int ncr; 
 
-  for (int j = r; j >= 1; j--) {
-    facr = facr * j;
-  }
-
-  for (int k = (n - r); k >= 1; k--) {
-    facnr = facnr * k;
-  }
+  	ncr = Factorial(n) / (Factorial(r) * Factorial(n - r));
+  
+  	return ncr;
+}
 
   nCr = facn / facr * facnr;
   
